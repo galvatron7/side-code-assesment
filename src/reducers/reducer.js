@@ -8,9 +8,7 @@ const initialState = {
 export default (state, action) => {
     const newState = state || initialState;
     switch(action.type){
-        // select for view
         case Constants.SET_SELECTED:
-            console.log("selected: ", action.payload);
             return {
                 ...newState,
                 selected:action.payload
