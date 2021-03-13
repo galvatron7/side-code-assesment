@@ -6,7 +6,6 @@ import Container from "@material-ui/core/Container";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ListingTile from "../ListingTile/ListingTile";
 import {useDispatch, useSelector} from "react-redux";
-import Constants from "../constants/Constants";
 import actions from "../actions/actions";
 import * as actConstants from "../actions/types";
 

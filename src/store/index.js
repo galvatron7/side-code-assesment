@@ -1,11 +1,12 @@
 import thunk from "redux-thunk";
 import {createStore, applyMiddleware} from 'redux';
 import rootReducer from '../reducers/rootReducer';
+import * as actConstants from "../actions/types";
 
 const saveState = (state) => {
     try {
         const serializedState = JSON.stringify(state);
-        localStorage.setItem('selected', serializedState);
+        localStorage.setItem('state', serializedState);
     } catch(err) {
         console.log("error loading cache...")
     }
@@ -13,7 +14,7 @@ const saveState = (state) => {
 
 export const loadState = () => {
     try {
-        const serializedState = localStorage.getItem('selected');
+        const serializedState = localStorage.getItem('state');
         if (serializedState === null) {
             return undefined;
         }
@@ -26,16 +27,19 @@ export const loadState = () => {
 const persistedState = loadState();
 const store = createStore(
     rootReducer,
-    {
-        listings:[],
-        ...persistedState
-    },
+    {state: {
+            listings: [],
+            ...persistedState
+        }
+        },
     applyMiddleware(thunk)
 );
 
+store.dispatch({type: actConstants.SET_SELECTED, payload: persistedState.selected});
+
 store.subscribe(() => {
     saveState({
-        selected: store.getState().selected
+        selected: store.getState().state.selected
     });
 });
 
