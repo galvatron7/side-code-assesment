@@ -50,7 +50,7 @@ const PropertyListings = (props) => {
     }
 
     function removeSelected (item) {
-        const newSelected = selectedItems.filter((item) => item.listingId !== item.listingId);
+        const newSelected = selectedItems.filter((selectedItem) => selectedItem.listingId !== item.listingId);
         dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
     }
 
