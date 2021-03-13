@@ -6,7 +6,6 @@ const initialState = {
 };
 
 export default (state, action) => {
-    debugger;
     const newState = state || initialState;
     switch(action.type){
         // select for view
