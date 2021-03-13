@@ -4,10 +4,7 @@ const Constants = {
     LISTED_TEXT:"Listed:",
     BATH_TEXT:"Bath",
     SQ_FT_TEXT:"Sq Ft",
-    NOT_AVAILABLE:"N/A",
-
-    SET_LISTINGS:"SET_LISTINGS",
-    SET_SELECTED:"SET_SELECTED"
+    NOT_AVAILABLE:"N/A"
 };
 
 export default Constants;

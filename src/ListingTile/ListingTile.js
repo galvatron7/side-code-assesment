@@ -76,7 +76,7 @@ const ListingTile = ({values, setSelected, isSelected, removeSelected}) => {
             let savedItem = isSelected(listingId);
             setSaved(savedItem);
         }
-    },[]);
+    },[isSelected,listingId]);
 
     return (
         <Card>

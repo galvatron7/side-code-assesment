@@ -11,7 +11,7 @@ const saveState = (state) => {
     }
 };
 
-const loadState = () => {
+export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('selected');
         if (serializedState === null) {
@@ -23,15 +23,20 @@ const loadState = () => {
     }
 };
 
+const persistedState = loadState();
 const store = createStore(
     rootReducer,
-    loadState(),
+    {
+        listings:[],
+        ...persistedState
+    },
     applyMiddleware(thunk)
 );
 
 store.subscribe(() => {
     saveState({
-        selected: store.getState().state.selected});
+        selected: store.getState().selected
+    });
 });
 
 export default store;

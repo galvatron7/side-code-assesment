@@ -1,0 +1,3 @@
+export const SET_LISTINGS = "SET_LISTINGS";
+export const SET_SELECTED = "SET_SELECTED";
+export const FETCH_LISTINGS = "FETCH_LISTINGS";

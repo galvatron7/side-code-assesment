@@ -1,29 +1,29 @@
-import Constants from '../constants/Constants'
-
+import * as actions from '../actions/types';
 const initialState = {
     listings:[],
     selected:[]
 };
 
-export default (state, action) => {
-    const newState = state || initialState;
+const reducer = (state = initialState, action) => {
     switch(action.type){
-        case Constants.SET_SELECTED:
+        case actions.SET_SELECTED:
             return {
-                ...newState,
+                ...state,
                 selected:action.payload
             };
-        case Constants.FETCH_LISTINGS:
+        case actions.FETCH_LISTINGS:
             return {
-                ...newState,
+                ...state,
                 listings:action.payload
             };
-        case Constants.SET_LISTINGS:
+        case actions.SET_LISTINGS:
             return {
-                ...newState,
+                ...state,
                 listings: action.payload
             };
         default:
-            return newState;
+            return state;
     }
-}
+};
+
+export default reducer;

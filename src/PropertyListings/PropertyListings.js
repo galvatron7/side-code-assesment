@@ -7,7 +7,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {useDispatch, useSelector} from "react-redux";
 import actions from "../actions/actions";
-import Constants from "../constants/Constants";
+import * as actConstants from "../actions/types";
 
 const useStyles = makeStyles(()=> ({
     top: {
@@ -46,12 +46,12 @@ const PropertyListings = (props) => {
         if(isSelected(item.listingId))
             return;
         const newSelected = [...selectedItems,item];
-        dispatch({type: Constants.SET_SELECTED, payload: newSelected});
+        dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
     }
 
     function removeSelected (item) {
         const newSelected = selectedItems.filter((item) => item.listingId !== item.listingId);
-        dispatch({type: Constants.SET_SELECTED, payload: newSelected});
+        dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
     }
 
     return (

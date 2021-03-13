@@ -1,4 +1,4 @@
-import Constants from "../constants/Constants";
+import * as actConstants from "../actions/types";
 
 const actions = {
     getListings
@@ -25,14 +25,7 @@ function getListings(){
                 listingId:listing.listingId
             }
         });
-        dispatch({type: Constants.SET_LISTINGS, payload: mlsListings});
+        dispatch({type: actConstants.SET_LISTINGS, payload: mlsListings});
     }
 }
-
-// function setSelected(selected){
-//     filter(()=> {
-//
-//     })
-// }
-
 export default actions;

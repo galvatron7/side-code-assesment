@@ -8,6 +8,7 @@ import ListingTile from "../ListingTile/ListingTile";
 import {useDispatch, useSelector} from "react-redux";
 import Constants from "../constants/Constants";
 import actions from "../actions/actions";
+import * as actConstants from "../actions/types";
 
 const useStyles = makeStyles(()=> ({
     top: {
@@ -49,12 +50,12 @@ const SavedListings = (props) => {
         if(isSelected(item.listingId))
             return;
         const newSelected = [...selectedItems,item];
-        dispatch({type: Constants.SET_SELECTED, payload: newSelected});
+        dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
     };
 
     function removeSelected(item){
         const newSelected = selectedItems.filter((selectedItem) => selectedItem.listingId !== item.listingId);
-        dispatch({type: Constants.SET_SELECTED, payload: newSelected});
+        dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
     }
 
     return (
