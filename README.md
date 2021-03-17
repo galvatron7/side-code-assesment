@@ -12,7 +12,7 @@ Demo for Side Interview
 * [React-router-dom] - The Frontend Module used to handle basic routing
 * [Redux-thunk] - Middleware used for redux control
 
-## Tests
+## Potential Tests to do
 
 1. Selection of listings to be saved
 1. Switching pages from Listings homepage to Saved Listings
@@ -22,7 +22,7 @@ Demo for Side Interview
 1. Showing proper saved state of individual listing cards
 1. Clicking on listing “Heart” save icon toggles listing in saved list in store
 
-## Redux
+## Why I used Redux
 
 1. I wanted to have an Example of a scalable solution
 1. Using redux makes testing easier
@@ -36,7 +36,7 @@ Demo for Side Interview
 1.	I used Material UI for managing the CSS and responsiveness
 1.	Material UI has a system built into it to help make apps responsive
 
-## Other
+## Other thoughts
 1. I Used functional components with hooks to reflect newer practices in the react world
 1. I made the assumption that the only items to be shown on the “saved Listings” page were the ones that were selected by the user
 
