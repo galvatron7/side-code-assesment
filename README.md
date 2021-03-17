@@ -1,6 +1,44 @@
-# Getting Started with Create React App
+# Side Demo
+Demo for Side Interview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Built With
+
+* [Material UI] - The CSS Styling framework used
+* [Redux] - Library used for data management
+* [ReactJS] -  The Frontend framework used
+* [React-redux] -  Library used for data management
+* [React-create-app] - Basic scaffolding for the app
+* [Fontawesome] - Used for standard icons in the app
+* [React-router-dom] - The Frontend Module used to handle basic routing
+* [Redux-thunk] - Middleware used for redux control
+
+## Tests
+
+1. Selection of listings to be saved
+1. Switching pages from Listings homepage to Saved Listings
+1. Fetching listings making sure to get data back
+1. Saving listings in local storage and retrieving it on hard refresh
+1. Showing proper information in the individual listing cards
+1. Showing proper saved state of individual listing cards
+1. Clicking on listing “Heart” save icon toggles listing in saved list in store
+
+## Redux
+
+1. I wanted to have an Example of a scalable solution
+1. Using redux makes testing easier
+1. I wanted easy access to data for components
+1. I wanted to avoid bad practices like prop drilling
+1. Saving to local storage can be automated in redux
+1. I used “redux-thunk” for better control of the redux flow
+
+## Responsiveness
+
+1.	I used Material UI for managing the CSS and responsiveness
+1.	Material UI has a system built into it to help make apps responsive
+
+## Other
+1. I Used functional components with hooks to reflect newer practices in the react world
+1. I made the assumption that the only items to be shown on the “saved Listings” page were the ones that were selected by the user
 
 ## Available Scripts
 
@@ -19,52 +57,6 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Authors
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Shane White** - *Complete Work* - [Galvatron7](https://github.com/galvatron7)
