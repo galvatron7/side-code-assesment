@@ -73,7 +73,7 @@ const SavedListings = (props) => {
                           thickness={4}
                         /> :
                             savedListings.map((listing, idx) =>
-                            <Grid item xs={4} key={idx}>
+                            <Grid item xs={4} key={listing.listingId}>
                                 <ListingTile
                                     values={listing}
                                     setSelected={setSelected}
@@ -89,4 +89,4 @@ const SavedListings = (props) => {
     )
 };
 
-export default SavedListings;
+export default React.memo(SavedListings);

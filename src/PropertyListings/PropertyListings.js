@@ -70,7 +70,7 @@ const PropertyListings = (props) => {
                           thickness={4}
                         /> :
                         mlsData.map((listing, idx) =>
-                            <Grid item xs={4} sm={4} md={4} lg={4} key={idx}>
+                            <Grid item xs={4} sm={4} md={4} lg={4} key={listing.listingId}>
                                 <ListingTile
                                     values={listing}
                                     setSelected={setSelected}
@@ -86,4 +86,4 @@ const PropertyListings = (props) => {
     )
 };
 
-export default PropertyListings;
+export default React.memo(PropertyListings);

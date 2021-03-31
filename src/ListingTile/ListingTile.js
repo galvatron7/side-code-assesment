@@ -111,4 +111,4 @@ const ListingTile = ({values, setSelected, isSelected, removeSelected}) => {
         </Card>
     )
 };
-export default ListingTile;
+export default React.memo(ListingTile);
