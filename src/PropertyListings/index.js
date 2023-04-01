@@ -1,29 +1,26 @@
 import React, {useEffect, useState} from 'react';
 
 import Grid from "@material-ui/core/Grid";
-import Page from "../Page/Page";
-import Spinner from "../Spinner/Spinner";
-import ListingTile from "../ListingTile/ListingTile";
+import ListingTile from "../ListingTile";
+import Page from "../Page";
+import Spinner from "../Spinner";
 import {useDispatch, useSelector} from "react-redux";
 import actions from "../actions/actions";
 import * as actConstants from "../actions/types";
 
-const SavedListings = (props) => {
+const PropertyListings = (props) => {
     const mlsData = useSelector(state => state.state.listings);
-    const [savedListings, setSavedListings] = useState([]);
-    const [loading, setLoading] = useState(false);
     const selectedItems = useSelector(state => state.state.selected);
+    const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const loadData = async () => {
+        const loadData = async () =>{
             setLoading(true);
             await dispatch(actions.getListings());
-            const newMls = mlsData.filter((item) => isSelected(item.listingId));
-            setSavedListings(newMls);
             setLoading(false);
-        };
-        loadData();
+        }
+        loadData()
     },[]);
 
     const isSelected = (id) => {
@@ -31,27 +28,27 @@ const SavedListings = (props) => {
         return !!(selected);
     };
 
-    const setSelected = (item) => {
+    function setSelected (item) {
         if(isSelected(item.listingId))
             return;
         const newSelected = [...selectedItems,item];
         dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
-    };
+    }
 
-    function removeSelected(item){
+    function removeSelected (item) {
         const newSelected = selectedItems.filter((selectedItem) => selectedItem.listingId !== item.listingId);
         dispatch({type: actConstants.SET_SELECTED, payload: newSelected});
     }
 
     return (
         <Page>
-            <h2>Saved Listings</h2>
+            <h2>Property Listings</h2>
             <Grid container alignItems="center" spacing={3}>
                 {
                     (loading)?
-                        <Spinner/> :
-                        savedListings.map((listing, idx) =>
-                        <Grid item xs={4} key={listing.listingId}>
+                    <Spinner/> :
+                    mlsData.map((listing, idx) =>
+                        <Grid item xs={4} sm={4} md={4} lg={4} key={listing.listingId}>
                             <ListingTile
                                 values={listing}
                                 setSelected={setSelected}
@@ -66,4 +63,4 @@ const SavedListings = (props) => {
     )
 };
 
-export default SavedListings;
+export default PropertyListings;

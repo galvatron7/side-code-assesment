@@ -1,7 +1,7 @@
 import './App.css';
 
-import PropertyListings from "./PropertyListings/PropertyListings";
-import SavedListings from "./SavedListings/SavedListings";
+import PropertyListings from "./PropertyListings";
+import SavedListings from "./SavedListings";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
