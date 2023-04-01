@@ -8,7 +8,7 @@ const saveState = (state) => {
         const serializedState = JSON.stringify(state);
         localStorage.setItem('state', serializedState);
     } catch(err) {
-        console.log("error loading cache...")
+        console.log("Error loading cache...")
     }
 };
 
@@ -16,11 +16,11 @@ export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('state');
         if (serializedState === null) {
-            return undefined;
+            return { selected:[] };
         }
         return JSON.parse(serializedState);
     } catch (err) {
-        return undefined;
+        return { selected:[] };
     }
 };
 
@@ -35,7 +35,7 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 
-store.dispatch({type: actConstants.SET_SELECTED, payload: persistedState.selected});
+store.dispatch({type: actConstants.SET_SELECTED, payload: persistedState.selected || []});
 
 store.subscribe(() => {
     saveState({
